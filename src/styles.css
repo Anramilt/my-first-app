@@ -56,6 +56,7 @@ h1 {
     gap: 10px; /* Расстояние между строкой поиска и кнопкой */
     position: relative; /* Для корректного позиционирования списка подсказок */
     margin-top: 20px; /* Добавим небольшой отступ сверху */
+    width: 300px;
 }
 
 input {
@@ -72,25 +73,58 @@ input:focus {
 }
 
 /* Список подсказок */
-#results {
-    width: 300px;  /* Та же ширина, что и у поля ввода */
+/*#results {
+    width: 300px;  /* Та же ширина, что и у поля ввода 
     max-height: 200px;
     overflow-y: auto;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 5px;  /* Отступ от поля ввода */
+    margin-top: 5px;  /* Отступ от поля ввода 
     position: absolute;
-    top: 100%;  /* Позиционируем список прямо под полем ввода */
+    top: 100%;  /* Позиционируем список прямо под полем ввода 
     left: 0;
     z-index: 1000;
     display: none;
-}
+}*/
+
+/* Список результатов */
+/*#results {
+    position: absolute;
+    width: 100%; /* Подгоняем под ширину контейнера *
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white; /* Добавляем белый фон, чтобы текст не сливался *
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    top: 100%; /* Размещаем прямо под строкой поиска *
+    left: 0;
+    z-index: 10;
+    display: none;
+}*/
 
 #results.show {
     display: block;  /* Показываем список, если есть результаты */
 }
+
+.results-container {
+    position: absolute; /* Размещаем под полем ввода */
+    width: 100%; /* Подгоняем под ширину родителя */
+    max-height: 200px; /* Ограничиваем высоту для скролла */
+    overflow-y: auto; /* Добавляем прокрутку, если много элементов */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: 100%; /* Размещаем прямо под строкой поиска */
+    margin-top: 5px;
+    left: 0;
+    z-index: 10;
+}
+
 
 /* Элементы в списке */
 .result-item {
@@ -110,7 +144,7 @@ input:focus {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 80px; /* Сместим немного вниз, чтобы не перекрывало */
+    margin-top: 100px; /* Сместим немного вниз, чтобы не перекрывало */
 }
 
 /* Игровая доска */

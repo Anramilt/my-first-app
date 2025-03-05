@@ -1,12 +1,32 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
-import TicTacToe from "./Game";
+//import SearchBar from "./SearchBar";
+//import TicTacToe from "./Game";
+import LoginPage from "./LoginPage"; 
+import RegisterPage from "./RegisterPage"; 
+import SearchPage from "./SearchPage";
+
 
 function App() {
   return (
     <Router>
       <div className="container">
+      <Routes>
+        <Route path="/" element={<SearchPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+/*{}
+<SearchBar />*/ 
+
+/*<div className="container">
         <h1>Поиск игры</h1>
         <div className="auth-buttons">
           <Link to="/register">
@@ -17,23 +37,11 @@ function App() {
           </Link>
         </div>
         
-        {/* Поисковая строка */}
-        <SearchBar />
+        
 
-        {/* Игра в крестики-нолики */}
+        {}
         <TicTacToe />
-      </div>
-
-      <Routes>
-        <Route path="/register" element={<div>Регистрация</div>} />
-        <Route path="/login" element={<div>Авторизация</div>} />
-      </Routes>
-    </Router>
-  );
-}
-
-export default App;
-
+      </div>*/ 
 
 
 

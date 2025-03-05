@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Game from "./Game"; 
 import "./styles.css";
 
 
@@ -22,7 +23,7 @@ const SearchPage = () => {
       }
 
       const categories = await response.json();
-      setResults(categories);
+      setResults(categories || []);
     } catch (error) {
       console.error("Ошибка запроса:", error);
     }
@@ -49,12 +50,8 @@ const SearchPage = () => {
     <div className="container">
       <h1>Поиск игры</h1>
       <div className="auth-buttons">
-        <a href="/register">
-          <button>Регистрация</button>
-        </a>
-        <a href="/login">
-          <button>Авторизация</button>
-        </a>
+      <button onClick={() => navigate("/register")}>Регистрация</button>
+      <button onClick={() => navigate("/login")}>Авторизация</button>
       </div>
 
       <div className="search-container">
@@ -78,6 +75,7 @@ const SearchPage = () => {
           Поиск
         </button>
       </div>
+      <Game />
     </div>
   );
 };
