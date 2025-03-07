@@ -1,19 +1,18 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Не центрируем весь контент */
+    justify-content: flex-start; /* Не центрируем весь контент 
     margin: 0;
-    min-height: 100vh; /* Минимальная высота */
-    min-width: 360px; /* Для корректного отображения на узких экранах */
+    min-height: 100vh; /* Минимальная высота *
+    min-width: 360px; /* Для корректного отображения на узких экранах *
 }
 h1 {
     color: #333;
-    /*text-align: center;*/  /* Центрируем текст по горизонтали */
-    width: 90%;  /* Чтобы занял ширину контейнера */
-    
+    /*text-align: center;*/  /* Центрируем текст по горизонтали *
+    width: 90%;  /* Чтобы занял ширину контейнера *
  }
  
 
@@ -27,7 +26,7 @@ h1 {
     position: relative;
 }
 
-/* Контейнер для кнопок авторизации */
+/* Контейнер для кнопок авторизации *
 .auth-buttons {
     position: fixed;
     top: 20px;
@@ -49,13 +48,13 @@ h1 {
     background-color: #1E90FF;
 }
 
-/* Поисковая строка */
+/* Поисковая строка *
 .search-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Расстояние между строкой поиска и кнопкой */
-    position: relative; /* Для корректного позиционирования списка подсказок */
-    margin-top: 20px; /* Добавим небольшой отступ сверху */
+    gap: 10px; /* Расстояние между строкой поиска и кнопкой *
+    position: relative; /* Для корректного позиционирования списка подсказок *
+    margin-top: 20px; /* Добавим небольшой отступ сверху *
     width: 300px;
 }
 
@@ -72,61 +71,28 @@ input:focus {
     border-color: #007bff;
 }
 
-/* Список подсказок */
-/*#results {
-    width: 300px;  /* Та же ширина, что и у поля ввода 
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 5px;  /* Отступ от поля ввода 
-    position: absolute;
-    top: 100%;  /* Позиционируем список прямо под полем ввода 
-    left: 0;
-    z-index: 1000;
-    display: none;
-}*/
-
-/* Список результатов */
-/*#results {
-    position: absolute;
-    width: 100%; /* Подгоняем под ширину контейнера *
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white; /* Добавляем белый фон, чтобы текст не сливался *
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 5px;
-    top: 100%; /* Размещаем прямо под строкой поиска *
-    left: 0;
-    z-index: 10;
-    display: none;
-}*/
 
 #results.show {
-    display: block;  /* Показываем список, если есть результаты */
+    display: block;  /* Показываем список, если есть результаты *
 }
 
 .results-container {
-    position: absolute; /* Размещаем под полем ввода */
-    width: 100%; /* Подгоняем под ширину родителя */
-    max-height: 200px; /* Ограничиваем высоту для скролла */
-    overflow-y: auto; /* Добавляем прокрутку, если много элементов */
+    position: absolute; /* Размещаем под полем ввода *
+    width: 100%; /* Подгоняем под ширину родителя *
+    max-height: 200px; /* Ограничиваем высоту для скролла *
+    overflow-y: auto; /* Добавляем прокрутку, если много элементов *
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    top: 100%; /* Размещаем прямо под строкой поиска */
+    top: 100%; /* Размещаем прямо под строкой поиска *
     margin-top: 5px;
     left: 0;
     z-index: 10;
 }
 
 
-/* Элементы в списке */
+/* Элементы в списке *
 .result-item {
     padding: 10px;
     cursor: pointer;
@@ -138,16 +104,16 @@ input:focus {
     color: white;
 }
 
-/* Игровое поле */
+/* Игровое поле *
 .game-field {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 100px; /* Сместим немного вниз, чтобы не перекрывало */
+    margin-top: 100px; /* Сместим немного вниз, чтобы не перекрывало *
 }
 
-/* Игровая доска */
+/* Игровая доска *
 .board-row {
     display: flex;
 }
@@ -164,7 +130,7 @@ input:focus {
     cursor: pointer;
 }
 
-/* Контейнер кнопок */
+/* Контейнер кнопок *
 .button-container {
     display: flex;
     justify-content: space-between; 
@@ -184,3 +150,4 @@ input:focus {
 .button:hover {
     background-color: #1E90FF;
 }
+*/

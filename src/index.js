@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Article from './Article';
+import ArticleList from './components/ArticleList';
 import {articles} from './fixtures'  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,9 +15,7 @@ root.render(
 );
 
 
-const article = articles[0]
-
-root.render(<Article article = {articles[0]} />, document.getElementById('container'))
+root.render(<ArticleList articles = {articles} />, document.getElementById('container'))
 
 
 
