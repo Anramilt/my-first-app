@@ -5,7 +5,7 @@ import toggleOpen from '../decorators/toggleOpen'
 
 class Article extends Component {
     static propTypes = {
-        article : this.PropTypes.shape ({
+            article : PropTypes.shape ({
             id : PropTypes.string.isRequired,
             title : PropTypes.string.isRequired,
             text: PropTypes.string
@@ -20,7 +20,7 @@ class Article extends Component {
         <div>
             <h3>{article.title}</h3>
             <button onClick={toggleOpen}>
-            {isOpen ? 'Close' : 'Open'}
+                {isOpen ? 'Close' : 'Open'}
             </button>
             {this.getBody()}
         </div>
@@ -28,22 +28,18 @@ class Article extends Component {
     } 
 
     getBody(){
-        if(!this.state.isOpen) return null
-        const {article} = this.props
+        //if(!this.state.isOpen) return null
+        const {article, isOpen} = this.props
+        if (!isOpen) return null
         return (
+
             <section>
                 {article.text}
-                <CommentList comments = {article.comment}/> 
+                <CommentList comments = {article.comments}/> 
             </section>
         )
     }
 
-    toggleOpen = (ev) =>{
-        ev.preventDefault()
-        this.setState({
-            isOpen: !this.state.isOpen
-        })
-    }
 }
 
-export default toggleOpen(Article)
+export default Article

@@ -6,7 +6,11 @@ import reportWebVitals from './reportWebVitals';
 
 import ArticleList from './components/ArticleList';
 import {articles} from './fixtures'  
+import {render} from 'react-dom'
+import PropTypes from 'prop-types'
 
+
+/*
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -15,9 +19,26 @@ root.render(
 );
 
 
-root.render(<ArticleList articles = {articles} />, document.getElementById('container'))
+root.render(<ArticleList articles = {articles} />, document.getElementById('container'))*/
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App articles={articles}/>
+  </React.StrictMode>
+);
 
+//root.render(<ArticleList articles = {articles} />, document.getElementById('container'))
+/*
+function Root() {
+  return (
+      <React.StrictMode>
+          <App />
+      </React.StrictMode>
+  )
+}
+render(<Root />, document.getElementById('container'))
 
+*/
 
 
 
