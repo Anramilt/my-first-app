@@ -22,8 +22,6 @@ class ArticleList extends Component{
                 />
         </li>)
     
-    
-    
         return (
             <ul>
                 {articleElements}

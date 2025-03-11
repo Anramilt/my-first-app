@@ -9,7 +9,7 @@ export default Component => class Accordion extends React.Component {
         return <Component {...this.props} toggleOpenItem = {this.toggleOpenItem} openItemId = {this.state.openItemId}/>
     }
 
-    toggleOpenArticle = openItemId => ev =>{
+    toggleOpenItem = openItemId => ev =>{
         this.setState({
             openItemId: openItemId === this.openItemId ? null : openItemId
         })

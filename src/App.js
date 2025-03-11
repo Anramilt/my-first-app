@@ -9,7 +9,7 @@ import SearchPage from "./SearchPage";
 import PropTypes from "prop-types";
 import ArticleList from "./components/ArticleList";
 import {articles} from './fixtures' 
-
+import UserForm from "./components/UserForm";
 
 
 class App extends Component{
@@ -24,6 +24,9 @@ class App extends Component{
       </div>
     )
   }
+
+  
+
 }
 
 export default App;

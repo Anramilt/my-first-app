@@ -5,7 +5,18 @@ export default (OriginalComponent) => class WrappedComponent extends ReactCompon
         isOpen : false
     }
     
-    
+    componentDidMount(){
+        console.log('---', 'mounting')
+    }
+
+    componentDidUpdate(){
+        console.log('---', 'updating')
+    }
+
+    componentWillUnmount(){
+        console.log('---', 'unmounting')
+    }
+
     render() {
         return <OriginalComponent {...this.props}{...this.state} toggleOpen = {this.toggleOpen} />
     }//{this.state.isOpen} можно записать как {...this.state}
@@ -16,5 +27,9 @@ export default (OriginalComponent) => class WrappedComponent extends ReactCompon
         this.setState({
             isOpen: !this.state.isOpen
         })
+    }
+
+    getref = (ref) => {
+        console.log('---', ref)
     }
 }
