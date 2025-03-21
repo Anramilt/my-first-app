@@ -3,11 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-import ArticleList from './components/ArticleList';
-import {articles} from './fixtures'  
 import {render} from 'react-dom'
-import PropTypes from 'prop-types'
+
 
 
 /*
@@ -23,7 +20,7 @@ root.render(<ArticleList articles = {articles} />, document.getElementById('cont
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App articles={articles}/>
+    <App />
   </React.StrictMode>
 );
 

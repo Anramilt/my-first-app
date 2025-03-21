@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Game from "./Game"; 
-import "./styles.css";
+import "./../styles.css";
+import FileManager from "./FileManager/FileManager";
 
 
 const SearchPage = () => {
@@ -75,7 +76,9 @@ const SearchPage = () => {
           Поиск
         </button>
       </div>
-      <Game />
+      
+      <FileManager />
+      {/* <Game /> */}
     </div>
   );
 };

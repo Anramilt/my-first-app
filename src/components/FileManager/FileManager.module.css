@@ -1,0 +1,27 @@
+.file-manager {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .image-list {
+    margin-top: 10px;
+  }
+  
+  img {
+    max-width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
