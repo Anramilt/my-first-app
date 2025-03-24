@@ -12,6 +12,7 @@ function App() {
     <Router>
       <div className="container">
       <Routes>
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/" element={<SearchPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

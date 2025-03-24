@@ -1,30 +1,28 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const navigate = useNavigate();
 
   const searchGame = async (e) => {
     const input = e.target.value.trim();
     setQuery(input);
   
     if (input.length < 1) {
-      setResults([]); // Очищаем, если пустой ввод
+      setResults([]);
       return;
     }
   
     try {
-      const response = await fetch(`http://localhost:8080/searchlimit?q=${encodeURIComponent(input)}`, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" }, // Явно указываем JSON
-      });
-  
+      const response = await fetch(`http://localhost:8080/searchlimit?q=${encodeURIComponent(input)}`);
       if (!response.ok) {
         throw new Error(`Ошибка запроса: ${response.status}`);
       }
   
-      const categories = await response.json();
-      setResults(categories || []); // Убеждаемся, что `setResults([])`, если `categories === null`
+      const data = await response.json();
+      setResults(data || []);
     } catch (error) {
       console.error("Ошибка запроса:", error);
     }
@@ -32,14 +30,14 @@ const SearchBar = () => {
 
   // Функция выбора элемента из списка
   const selectGame = (game) => {
-    setQuery(game);
+    setQuery(game.name); // ✅ Передаем только название, а не объект
     setResults([]);
   };
 
   // Функция для редиректа при нажатии на "Поиск"
   const performSearch = () => {
     if (query.length > 0) {
-      window.location.href = `/search?q=${encodeURIComponent(query)}`;
+      navigate(`/search?q=${encodeURIComponent(query)}`); // ✅ Используем navigate, а не window.location.href
     }
   };
 
@@ -51,13 +49,13 @@ const SearchBar = () => {
         onChange={searchGame}
         placeholder="Введите название игры"
       />
-      <div id="results" className={results.length > 0 ? "show" : ""}>
-    {results.map((tag, index) => (
-        <div key={index} className="result-item" onClick={() => selectGame(tag)}>
-            {tag}
-        </div>
-    ))}
-</div>
+      <div className="results-container">
+        {results.map((game, index) => (
+          <div key={index} className="result-item" onClick={() => selectGame(game)}>
+            {game.name}
+          </div>
+        ))}
+      </div>
       <button className="button" onClick={performSearch}>
         Поиск
       </button>
@@ -66,12 +64,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-/*
-    <div className="results">
-        {results.map((tag, index) => (
-          <div key={index} className="result-item" onClick={() => selectGame(tag)}>
-            {tag}
-          </div>
-        ))}
-      </div>
-*/ 
