@@ -1,28 +1,31 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const navigate = useNavigate();
 
   const searchGame = async (e) => {
     const input = e.target.value.trim();
     setQuery(input);
-  
+
     if (input.length < 1) {
-      setResults([]);
+      setResults([]); // Очищаем, если пустой ввод
       return;
     }
-  
+
     try {
-      const response = await fetch(`http://localhost:8080/searchlimit?q=${encodeURIComponent(input)}`);
+      const response = await fetch(`http://localhost:8080/searchlimit?q=${encodeURIComponent(input)}`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" }, // Явно указываю JSON
+      });
+
       if (!response.ok) {
         throw new Error(`Ошибка запроса: ${response.status}`);
       }
-  
-      const data = await response.json();
-      setResults(data || []);
+
+      const categories = await response.json();
+      setResults(categories || []); // Убеждаемся, что `setResults([])`, если `categories === null`
     } catch (error) {
       console.error("Ошибка запроса:", error);
     }
@@ -30,14 +33,14 @@ const SearchBar = () => {
 
   // Функция выбора элемента из списка
   const selectGame = (game) => {
-    setQuery(game.name); // ✅ Передаем только название, а не объект
+    setQuery(game);
     setResults([]);
   };
 
   // Функция для редиректа при нажатии на "Поиск"
   const performSearch = () => {
     if (query.length > 0) {
-      navigate(`/search?q=${encodeURIComponent(query)}`); // ✅ Используем navigate, а не window.location.href
+      window.location.href = `/search?q=${encodeURIComponent(query)}`;
     }
   };
 
@@ -49,18 +52,44 @@ const SearchBar = () => {
         onChange={searchGame}
         placeholder="Введите название игры"
       />
-      <div className="results-container">
-        {results.map((game, index) => (
-          <div key={index} className="result-item" onClick={() => selectGame(game)}>
-            {game.name}
+      {results.length > 0 && (
+        <div className="results-container">
+          {results.map((tag, index) => (
+            <div key={index} className="result-item" onClick={() => selectGame(tag)}>
+              {tag}
+            </div>
+          ))}
+        </div>
+      )}
+      <button className="search-button" onClick={performSearch}>
+        Поиск
+      </button>
+      {/* <div id="results" className={results.length > 0 ? "show" : ""}>
+        {results.map((tag, index) => (
+          <div key={index} className="result-item" onClick={() => selectGame(tag)}>
+            {tag}
           </div>
         ))}
       </div>
       <button className="button" onClick={performSearch}>
         Поиск
-      </button>
+      </button> */}
     </div>
   );
 };
 
 export default SearchBar;
+/*
+    <div className="results">
+        {results.map((tag, index) => (
+          <div key={index} className="result-item" onClick={() => selectGame(tag)}>
+            {tag}
+          </div>
+        ))}
+      </div>
+*/ 
+
+
+
+
+

@@ -3,22 +3,27 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Game from "./Game";
 import "./../styles.css";
 import FileManager from "./FileManager/FileManager";
+import SearchBar from "./SearchBar";
 
 
 const SearchPage = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [showResults, setShowResults] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   const searchGame = async (input) => {
-    if (input.trim().length === 0) {
-      setResults([]);
-      return;
-    }
-
+    // if (input.trim().length === 0) {
+    //   setResults([]);
+    //   return;
+    // }
     try {
-      const response = await fetch(`http://localhost:8080/search?q=${encodeURIComponent(input)}`);
+      const response = await fetch(`http://localhost:8080/search?q=${encodeURIComponent(input)}`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" }, // Явно указываю JSON
+      }); 
+
       if (!response.ok) {
         console.error("Ошибка запроса:", response.status);
         return;
@@ -27,25 +32,28 @@ const SearchPage = () => {
       const data = await response.json();
       console.log("Результаты поиска:", data); // Лог для отладки
       setResults(data || []);
+      setShowResults(true);
     } catch (error) {
       console.error("Ошибка запроса:", error);
     }
   };
+
+
   // Загружаем результаты при открытии страницы с параметром из URL
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const searchQuery = params.get("q");
     if (searchQuery) {
       setQuery(searchQuery);
-      searchGame(searchQuery);
+      //searchGame(searchQuery);
+      setShowResults(false);
     }
   }, [location.search]);
 
 
   const handleInputChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
-    searchGame(value);
+    setQuery(e.target.value);
+    //searchGame(value);
   };
 
   const handleResultClick = (game) => {
@@ -57,6 +65,7 @@ const SearchPage = () => {
   const performSearch = () => {
     if (query.trim().length > 0) {
       navigate(`/search?q=${encodeURIComponent(query)}`);
+      searchGame(query);
     }
   };
 
@@ -64,6 +73,7 @@ const SearchPage = () => {
   return (
     <div className="container">
       <h1>Поиск игры</h1>
+
       <div className="auth-buttons">
         <button onClick={() => navigate("/register")}>Регистрация</button>
         <button onClick={() => navigate("/login")}>Авторизация</button>
@@ -77,36 +87,40 @@ const SearchPage = () => {
           onChange={handleInputChange}
           placeholder="Введите название игры"
         />
+        <button type="button"className="button" onClick={performSearch}>Поиск</button>
+      </div>
 
-            {/* Блок с результатами поиска */}
-            {results.length > 0 && (
-        <div className="search-results">
+
+      {results.length > 0 && !showResults && (
+        <div className="results-container ">
           {results.map((game, index) => (
-            <div key={index} className="game-result">
-              <h2>{game.name}</h2>
-              {game.icon && (
-                <img
-                  src={`http://localhost:8080/images?name=${encodeURIComponent(game.icon)}`}
-                  alt={game.name}
-                  className="game-icon"
-                />
-              )}
-              <div className="image-gallery">
-                {game.images.map((image, imgIndex) => (
-                  <img
-                    key={imgIndex}
-                    src={`http://localhost:8080/images?name=${encodeURIComponent(image)}`}
-                    alt={`Игра ${game.name}`}
-                    className="game-image"
-                  />
-                ))}
+            <div key={index} className="result-item" onClick={()=> handleResultClick(game)}>
+              {game.game}
               </div>
-            </div>
           ))}
         </div>
       )}
-    </div>
-    </div>
+
+
+
+        {/* Блок с результатами поиска */}
+        {showResults && results.length > 0 && (
+          <div className="search-results">
+            {results.map((game, index) => (
+              <div key={index} className="game-result">
+                <h2>{game.name}</h2>
+                {game.icon && (
+                  <img
+                    src={`http://localhost:8080/images?name=${encodeURIComponent(game.icon)}`}
+                    alt={game.name}
+                    className="game-icon"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
   );
 };
 
