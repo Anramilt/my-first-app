@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/*import React, { useState } from "react";
 
 
 const SearchBar = () => {
@@ -73,12 +73,12 @@ const SearchBar = () => {
       </div>
       <button className="button" onClick={performSearch}>
         Поиск
-      </button> */}
+      </button> *}
     </div>
   );
 };
 
-export default SearchBar;
+export default SearchBar;*/
 /*
     <div className="results">
         {results.map((tag, index) => (
