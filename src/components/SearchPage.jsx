@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import Game from "./Game";
+import Game from "./MainPage/MainPage/Game";
 import "./../styles.css";
 import FileManager from "./FileManager/FileManager";
 

@@ -1,0 +1,124 @@
+.sidebar {
+  width: 80px; /* Закрытое состояние */
+  background-color: #7147a1d7;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.open {
+  width: 250px; /* Открытое состояние */
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  border-radius: 8px;
+}
+
+.navItem:hover {
+  background: #555;
+}
+
+.sidebar.open .navItem {
+  justify-content: flex-start;
+  width: 80%;
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Управление текстом */
+.text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.sidebar.open .text {
+  opacity: 1;
+  width: auto;
+}
+
+.sidebar:not(.open) .navItem {
+  justify-content: center;
+  width: 50px; /* Узкая кнопка при закрытом меню */
+  padding: 12px;
+}
+
+/*.nav {
+  grid-area: n;
+  background-color: rgba(106, 71, 138, 0.795);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  align-items: flex-start;
+}
+
+
+.item {
+  display: flex;
+  align-items:  flex-start;
+  justify-content: center;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.item a {
+  display: flex;
+  align-items:  flex-start;
+  justify-content: center;
+  color: rgba(33, 14, 34, 0.795);
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+  width: 100%;
+}
+
+.item a.activeLink {
+  color: #8224E3;
+  font-weight: bold;
+  background-color: rgba(183, 153, 212, 0.315);
+  border-radius: 5px;
+}
+
+.item a:hover {
+  background-color: #bea3ddd2; 
+  color: rgba(91, 32, 119, 0.4);
+}*/

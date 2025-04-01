@@ -1,4 +1,4 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -6,13 +6,13 @@ body {
     align-items: center;
     justify-content: flex-start; /* Не центрируем весь контент 
     margin: 0;
-    min-height: 100vh; /* Минимальная высота */
-    min-width: 360px; /* Для корректного отображения на узких экранах */
+    min-height: 100vh; /* Минимальная высота *
+    min-width: 360px; /* Для корректного отображения на узких экранах *
 }
 h1 {
     color: #333;
-    /*text-align: center;*/  /* Центрируем текст по горизонтали */
-    width: 90%;  /* Чтобы занял ширину контейнера */
+    /*text-align: center;*/  /* Центрируем текст по горизонтали *
+    width: 90%;  /* Чтобы занял ширину контейнера *
  }
  
 
@@ -26,35 +26,14 @@ h1 {
     position: relative;
 }
 
-/* Контейнер для кнопок авторизации */
-.auth-buttons {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
 
-.auth-buttons button {
-    padding: 10px 15px;
-    background-color: #87CEEB;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.auth-buttons button:hover {
-    background-color: #1E90FF;
-}
-
-/* Поисковая строка */
+/* Поисковая строка *
 .search-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Расстояние между строкой поиска и кнопкой */
-    position: relative; /* Для корректного позиционирования списка подсказок */
-    margin-top: 20px; /* Добавим небольшой отступ сверху */
+    gap: 10px; /* Расстояние между строкой поиска и кнопкой *
+    position: relative; /* Для корректного позиционирования списка подсказок *
+    margin-top: 20px; /* Добавим небольшой отступ сверху *
     width: 300px;
 }
 
@@ -73,19 +52,19 @@ input:focus {
 
 
 #results.show {
-    display: block;  /* Показываем список, если есть результаты */
+    display: block;  /* Показываем список, если есть результаты *
 }
 
 .container .results-container{
-    position: absolute; /* Размещаем под полем ввода */
-    width: 100%; /* Подгоняем под ширину родителя */
-    max-height: 200px; /* Ограничиваем высоту для скролла */
-    overflow-y: auto; /* Добавляем прокрутку, если много элементов */
+    position: absolute; /* Размещаем под полем ввода *
+    width: 100%; /* Подгоняем под ширину родителя *
+    max-height: 200px; /* Ограничиваем высоту для скролла *
+    overflow-y: auto; /* Добавляем прокрутку, если много элементов *
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    top: 100%; /* Размещаем прямо под строкой поиска */
+    top: 100%; /* Размещаем прямо под строкой поиска *
     margin-top: 5px;
     left: 0;
     z-index: 10;
@@ -93,7 +72,7 @@ input:focus {
 
 
 
-/* Элементы в списке */
+/* Элементы в списке *
 .result-item {
     padding: 10px;
     cursor: pointer;
@@ -106,47 +85,19 @@ input:focus {
 }
 
 
-/* Контейнер кнопок */
-.button-container {
-    display: flex;
-    justify-content: space-between; 
-    gap: 10px;
-    margin-top: 20px;
-}
 
-.button {
-    padding: 10px;
-    background-color: #87CEEB;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-.button:hover {
-    background-color: #1E90FF;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    width: 100%; /* Добавим ширину 100% для родительского контейнера */
-}
-
-/* Грид для списка игр */
+/* Грид для списка игр *
 .search-results {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Адаптивная сетка */
-    gap: 20px; /* Расстояние между карточками */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Адаптивная сетка *
+    gap: 20px; /* Расстояние между карточками 
     margin-top: 20px;
     padding: 10px;
     width: 80%;
 }
 
-/* Карточка игры */
+/* Карточка игры 
 .game-result {
     background: white;
     padding: 15px;
@@ -161,10 +112,10 @@ input:focus {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Изображение игры */
+/* Изображение игры 
 .game-icon {
     width: 100%;
     height: auto;
     border-radius: 5px;
     margin-top: 10px;
-}
+}*/
