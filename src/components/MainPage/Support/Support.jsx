@@ -9,7 +9,7 @@ const Support = () => {
   return (
     <div>
       <div className={classes.helpblock}>
-        HELP
+        {/* HELP */}
       </div>
     </div>
 

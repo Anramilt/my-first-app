@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #cbc7d8ad;
 }
 
 .main-layout {

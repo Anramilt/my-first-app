@@ -3,13 +3,13 @@ import React, {useState} from 'react';
 import classes from './Navbar.module.css'
 import { NavLink } from 'react-router-dom';
 
-import { FaUser, FaDumbbell, FaShoppingCart, FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { FaUser, FaDumbbell, FaShoppingCart, FaChevronRight, FaChevronLeft, FaHome, FaQuestion } from "react-icons/fa";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const toggleNavbar = () => {
+    /*const toggleNavbar = () => {
         setIsOpen(!isOpen);
-    };
+    };*/
 
     return (
         <div className={`${classes.sidebar} ${isOpen ? classes.open : ""}`}>
@@ -18,6 +18,10 @@ const Navbar = () => {
             </button>
             <nav className={classes.nav}>
                 <NavLink to="/" className={classes.navItem}>
+                    <FaHome className={classes.icon} />
+                    <span className={`${classes.text} ${isOpen ? classes.show : classes.hide}`}>Главная</span>
+                </NavLink>
+                <NavLink to="/profile" className={classes.navItem}>
                     <FaUser className={classes.icon} />
                     <span className={`${classes.text} ${isOpen ? classes.show : classes.hide}`}>Профиль</span>
                 </NavLink>
@@ -29,12 +33,13 @@ const Navbar = () => {
                     <FaShoppingCart className={classes.icon} />
                     <span className={`${classes.text} ${isOpen ? classes.show : classes.hide}`}>Цены</span>
                 </NavLink>
+                
+                <NavLink to="/help" className={classes.navItem}>
+                    <FaQuestion className={classes.icon} />
+                    <span className={`${classes.text} ${isOpen ? classes.show : classes.hide}`}>Помощь</span>
+                </NavLink>
             </nav>
         </div>
-
-
-
-
         
     );
 }

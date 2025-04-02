@@ -8,7 +8,10 @@ const AboutCompany = () => {
     return (
       <div>
 
-        AboutCompany
+        <h1>AboutCompany</h1>
+        <div>Наши преимущества</div>
+        <div>Партнёры</div>
+        <div>Обратная связь</div>
 
       </div>
   

@@ -11,6 +11,11 @@ import MainPage from "./components/MainPage/MainPage"
 
 import Navbar from './components/Navbar/Navbar';
 import Header from "./components/Header/Header";
+import LoginPage from "./components/Header/LoginPage/LoginPage";
+import RegisterPage from "./components/Header/RegisterPage/RegisterPage";
+import AboutCompany from "./components/MainPage/Content/AboutCompany/AboutCompany";
+import News from "./components/MainPage/Content/News/News";
+import Contacts from "./components/MainPage/Content/Contacts/Contacts";
 
 
 function App() {
@@ -24,9 +29,13 @@ function App() {
           <Navbar />
           <div className="content">
             <Routes>
-
+              {/*Чисто кнопки в Header*/}
               <Route path="/" element={<MainPage />} />
-
+              <Route path="/auth" element ={<LoginPage/>} />
+              <Route path="/register" element ={<RegisterPage />} />
+              <Route path ="/about" element = {<AboutCompany />} />
+              <Route path ="/news" element = {<News />}/>
+              <Route path="/contact" element = {<Contacts />} />
 
               {/* <Route path="/search" element={<SearchPage />} />
         <Route path="/" element={<SearchPage />} />

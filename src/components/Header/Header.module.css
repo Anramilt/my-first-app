@@ -5,9 +5,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 0px 30px;
-  flex-shrink: 0;
+  height: 80px;
+  box-sizing: border-box;
+}
+/* Обертка для кнопок авторизации */
+.authContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
+/* Кнопки "Войти" и "Регистрация" */
 .authButtons {
   display: flex;
   gap: 10px;
@@ -20,8 +28,102 @@
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
 }
+
+.authButton a{
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 15px 25px;
+}
+
 
 .authButton:hover {
   background-color: #888;
 }
+
+
+.profile {
+  width: 50px;
+  height: 50px;
+  
+  border: 2px solid  #666;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  
+ 
+  overflow: hidden;
+}
+
+.profile img{
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.headerNavbar {
+  display: flex;
+  gap: 30px;
+  justify-content: center; /* выравн по центру */
+  flex: 1;
+}
+
+
+
+
+/* Настройки кнопок */
+.bar {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 20px;
+}
+
+.bar a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+.bar:hover {
+  background: rgba(255, 255, 255, 0.2); 
+  transform: scale(1.05); /*небольшое величение кнопки */
+}
+.bar a.activeLink{
+  font-weight: bold;
+}
+
+
+/*.bar a:hover {
+  color: #888;
+  background-color: #888;
+}
+ .bar a.activeLink{
+  background-color: #888;
+  font-weight: bold;
+} 
+*/
