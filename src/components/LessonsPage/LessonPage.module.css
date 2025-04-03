@@ -1,0 +1,46 @@
+
+.headerNavbar {
+    display: flex;
+    gap: 30px;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    margin-right: 17%;
+    flex: 1;
+  }
+
+/* Настройки кнопок */
+.bar {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 20px;
+    background-color: #7147a1d7;
+  }
+  
+  .bar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    height: 100%;  
+  }
+  
+  
+  .bar:hover {
+    background: #a386c4d7; 
+    transform: scale(1.05); 
+  }
+  .bar a.activeLink{
+    font-weight: bolder;
+  }
+
+.createLine{
+    margin-top: 30px;
+    width: 85%;
+    border-top: 3px solid #888;
+    border-radius: 20px;
+}

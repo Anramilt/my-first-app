@@ -10,9 +10,10 @@ const MainPage = () => {
 
   return (
     <div className={classes.mainPage}>
-      <div> <ProfilePage /> </div>
       <div> <Content />  </div>
-      <div> <Support /> </div>
+
+      {/* <div> <ProfilePage /> </div>
+      <div> <Support /> </div> */}
       
       
     </div>

@@ -1,0 +1,110 @@
+
+.h1 {
+    
+    /*text-align: center;*/  /* Центрируем текст по горизонтали */
+    width: 90%;  /* Чтобы занял ширину контейнера */
+ }
+
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;   
+    position: relative;
+}
+
+/* Поисковая строка */
+.searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между строкой поиска и кнопкой */
+    position: relative; /* Для корректного позиционирования списка подсказок */
+    margin-top: 20px; /* Добавим небольшой отступ сверху */
+    width: 300px;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #007bff;
+}
+
+
+#results.show {
+    display: block;  /* Показываем список, если есть результаты */
+}
+
+.container .resultsContainer{
+    position: absolute; /* Размещаем под полем ввода */
+    width: 100%; /* Подгоняем под ширину родителя */
+    max-height: 200px; /* Ограничиваем высоту для скролла */
+    overflow-y: auto; /* Добавляем прокрутку, если много элементов */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: 100%; /* Размещаем прямо под строкой поиска */
+    margin-top: 5px;
+    left: 0;
+    z-index: 10;
+}
+
+
+
+/* Элементы в списке **/
+.resultItem {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.resultItem:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
+
+
+/* Грид для списка игр **/
+.searchResults {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Адаптивная сетка **/
+    gap: 20px; /* Расстояние между карточками */
+    margin-top: 20px;
+    padding: 10px;
+    width: 80%;
+}
+
+/* Карточка игры */
+.gameResult {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gameResult:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Изображение игры */
+.gameIcon {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}

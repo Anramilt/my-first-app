@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import LoginPage from '../../Header/LoginPage/LoginPage';
 import RegisterPage from '../../Header/RegisterPage/RegisterPage';
 import Settings from './Settings/Settings'
-
+import classes from './ProfilePage.module.css'
 
 const ProfilePage = () => {
   const navigate = useNavigate();
@@ -12,7 +12,24 @@ const ProfilePage = () => {
 
 
   return (
-    <div>
+    <div className={classes.mainConteiner}>
+      <div className={classes.avatar}>
+        <h1>Avatar</h1>
+      </div>
+      <div className={classes.info}>
+        <div className={classes.infoitem}>
+          Name
+        </div>
+        <div className={classes.infoitem}>
+          Surname
+        </div>
+        <div className={classes.infoitem}>
+          Account Type
+        </div>
+      </div>
+
+
+
       {/* <div className="auth-buttons">
         <button onClick={() => navigate("/register")}>Регистрация</button>
         <button onClick={() => navigate("/login")}>Авторизация</button>

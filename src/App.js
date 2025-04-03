@@ -16,6 +16,10 @@ import RegisterPage from "./components/Header/RegisterPage/RegisterPage";
 import AboutCompany from "./components/MainPage/Content/AboutCompany/AboutCompany";
 import News from "./components/MainPage/Content/News/News";
 import Contacts from "./components/MainPage/Content/Contacts/Contacts";
+import ProfilePage from "./components/MainPage/ProfilePage/ProfilePage";
+import LessonPage from "./components/LessonsPage/LessonPage";
+import SearchBar from "./components/LessonsPage/SearchBar/SearchBar";
+import Support from "./components/MainPage/Support/Support";
 
 
 function App() {
@@ -31,11 +35,24 @@ function App() {
             <Routes>
               {/*Чисто кнопки в Header*/}
               <Route path="/" element={<MainPage />} />
-              <Route path="/auth" element ={<LoginPage/>} />
-              <Route path="/register" element ={<RegisterPage />} />
-              <Route path ="/about" element = {<AboutCompany />} />
-              <Route path ="/news" element = {<News />}/>
-              <Route path="/contact" element = {<Contacts />} />
+              <Route path="/auth" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/about" element={<AboutCompany />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/contact" element={<Contacts />} />
+
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+
+
+              <Route path="/profile" element={<ProfilePage />} />
+
+
+              <Route path="/lessons" element={<LessonPage />} />
+              <Route path="/search" element={<SearchBar />} />
+
+              <Route path="/help" element={<Support />} />
+
 
               {/* <Route path="/search" element={<SearchPage />} />
         <Route path="/" element={<SearchPage />} />

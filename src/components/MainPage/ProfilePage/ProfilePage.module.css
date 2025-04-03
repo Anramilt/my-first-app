@@ -1,14 +1,40 @@
+.mainConteiner{
+    display: inline-block;
+}
 
-.container {
+.avatar{
+    margin-top: 30px;
+    background-color: aliceblue;
+    width: 150px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.info{
+    margin-top: 20px;
+    margin-left: 80px;
+    display: block;
+    background-color: aliceblue;
+    gap: 10px;
+    padding: 20px 25px;
+}
+.infoitem{
+    display: flex;
+}
+
+
+
+
+
+/*.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     margin: 0;
-    width: 100%; /* Добавим ширину 100% для родительского контейнера */
+    width: 100%;
 }
 
-/* Контейнер для кнопок авторизации */
 .auth-buttons {
     position: fixed;
     top: 20px;
@@ -29,3 +55,4 @@
 .auth-buttons button:hover {
     background-color: #1E90FF;
 }
+*/

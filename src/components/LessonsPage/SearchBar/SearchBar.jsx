@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import Game from "./MainPage/MainPage/Game";
-import "./../styles.css";
-import FileManager from "./FileManager/FileManager";
+import classes from "./SearchBar.module.css"
+
+//import Game from "./MainPage/MainPage/Game";
+//import "./../styles.css";
+//import FileManager from "../../FileManager/FileManager";
 
 
-const SearchPage = () => {
+const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
@@ -73,7 +75,7 @@ const SearchPage = () => {
       return;
     }
 
-    navigate(`/search?q=${encodeURIComponent(query)}`);
+    navigate(`/lessons?q=${encodeURIComponent(query)}`);
     
 
     try {
@@ -149,15 +151,15 @@ const SearchPage = () => {
 
 
   return (
-    <div className="container">
+    <div className={classes.container}>
       <h1>Поиск игры</h1>
 
-      <div className="auth-buttons">
+      {/* <div className="auth-buttons">
         <button onClick={() => navigate("/register")}>Регистрация</button>
         <button onClick={() => navigate("/login")}>Авторизация</button>
-      </div>
+      </div> */}
 
-      <div className="search-container"> {/*Поисковая строка*/}
+      <div className={classes.searchContainer}> {/*Поисковая строка*/}
         <input
           type="text"
           id="searchInput"
@@ -169,9 +171,9 @@ const SearchPage = () => {
 
 
         {results.length > 0 && !showResults && (
-          <div className="results-container ">
+          <div className={classes.resultsContainer}>
             {results.map((game, index) => (
-              <div key={index} className="result-item" onClick={() => handleResultClick(game)}>
+              <div key={index} className={classes.resultItem} onClick={() => handleResultClick(game)}>
                 {typeof game === "string" ? game : game.name}
               </div>
             ))}
@@ -182,15 +184,15 @@ const SearchPage = () => {
 
       {/* Блок с результатами поиска */}
       {showResults && results.length > 0 && (
-        <div className="search-results">
+        <div className={classes.searchResults}>
           {results.map((game, index) => (
-            <div key={index} className="game-result">
+            <div key={index} className={classes.gameResult}>
               <h2>{game.name}</h2>
               {game.icon && (
                 <img
                   src={`http://localhost:8080/images?name=${encodeURIComponent(game.icon)}`}
                   alt={game.name}
-                  className="game-icon"
+                  className={classes.gameIcon}
                 />
               )}
             </div>
@@ -202,7 +204,7 @@ const SearchPage = () => {
 };
 
 
-export default SearchPage;
+export default SearchBar;
 
 
 
