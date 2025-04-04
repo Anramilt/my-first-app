@@ -9,6 +9,8 @@ import './App.css';
 //import SearchPage from "./components/SearchPage";
 import MainPage from "./components/MainPage/MainPage"
 
+import LoginPage from "./components/LoginPage/LoginPage";
+/*
 import Navbar from './components/Navbar/Navbar';
 import Header from "./components/Header/Header";
 import LoginPage from "./components/Header/LoginPage/LoginPage";
@@ -19,7 +21,7 @@ import Contacts from "./components/MainPage/Content/Contacts/Contacts";
 import ProfilePage from "./components/MainPage/ProfilePage/ProfilePage";
 import LessonPage from "./components/LessonsPage/LessonPage";
 import SearchBar from "./components/LessonsPage/SearchBar/SearchBar";
-import Support from "./components/MainPage/Support/Support";
+import Support from "./components/MainPage/Support/Support";*/
 
 
 function App() {
@@ -28,13 +30,16 @@ function App() {
 
       <div className="app-container">
 
-        <Header />
+        {/* <Header /> */}
         <div className="main-layout">
-          <Navbar />
+          {/* <Navbar /> */}
           <div className="content">
             <Routes>
+            <Route path="/" element={<LoginPage />} />
+
+
               {/*Чисто кнопки в Header*/}
-              <Route path="/" element={<MainPage />} />
+              {/* <Route path="/" element={<MainPage />} />
               <Route path="/auth" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/about" element={<AboutCompany />} />
@@ -51,7 +56,7 @@ function App() {
               <Route path="/lessons" element={<LessonPage />} />
               <Route path="/search" element={<SearchBar />} />
 
-              <Route path="/help" element={<Support />} />
+              <Route path="/help" element={<Support />} /> */}
 
 
               {/* <Route path="/search" element={<SearchPage />} />

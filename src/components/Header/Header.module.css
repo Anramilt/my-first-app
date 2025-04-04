@@ -1,4 +1,4 @@
-.header {
+/*.header {
   background-color: #363238e5;
   color: white;
   display: flex;
@@ -8,14 +8,14 @@
   height: 80px;
   box-sizing: border-box;
 }
-/* Обертка для кнопок авторизации */
+/* Обертка для кнопок авторизации *
 .authContainer {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Кнопки "Войти" и "Регистрация" */
+/* Кнопки "Войти" и "Регистрация" *
 .authButtons {
   display: flex;
   gap: 10px;
@@ -81,14 +81,14 @@
 .headerNavbar {
   display: flex;
   gap: 30px;
-  justify-content: center; /* выравн по центру */
+  justify-content: center; /* выравн по центру *
   flex: 1;
 }
 
 
 
 
-/* Настройки кнопок */
+/* Настройки кнопок *
 .bar {
   background: none;
   border: none;
@@ -111,13 +111,13 @@
 
 .bar:hover {
   background: rgba(255, 255, 255, 0.2); 
-  transform: scale(1.05); /*небольшое величение кнопки */
+  transform: scale(1.05); /*небольшое величение кнопки *
 }
 .bar a.activeLink{
   font-weight: bolder;
 }
 
-
+*/
 /*.bar a:hover {
   color: #888;
   background-color: #888;

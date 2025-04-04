@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
-import LoginPage from '../../Header/LoginPage/LoginPage';
-import RegisterPage from '../../Header/RegisterPage/RegisterPage';
+import LoginPage from '../../LoginPage/LoginPage';
+import RegisterPage from '../../RegisterPage/RegisterPage';
 import Settings from './Settings/Settings'
 import classes from './ProfilePage.module.css'
 

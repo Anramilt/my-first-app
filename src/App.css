@@ -16,6 +16,8 @@
   background-color: rgba(209, 206, 211, 0.781);
   border-radius: 5px;
 }*/
+
+/*
 .app-container {
   display: flex;
   flex-direction: column;
@@ -25,8 +27,8 @@
 
 .main-layout {
   display: grid;
-  grid-template-columns: 250px 1fr; /* Navbar занимает 250px, остальное - Content */
-  grid-template-rows: auto 1fr auto; /* Header сверху, Content в центре, Footer внизу */
+  grid-template-columns: 250px 1fr; /* Navbar занимает 250px, остальное - Content *
+  grid-template-rows: auto 1fr auto; /* Header сверху, Content в центре, Footer внизу *
   grid-template-areas:
       "header header"
       "navbar content"
@@ -38,4 +40,4 @@
   flex: 1;
   padding: 20px;
   overflow: auto;
-}
+}*/
