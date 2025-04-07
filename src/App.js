@@ -10,6 +10,7 @@ import './App.css';
 import MainPage from "./components/MainPage/MainPage"
 
 import LoginPage from "./components/LoginPage/LoginPage";
+import RegisterPage from "./components/RegisterPage/RegisterPage";
 /*
 import Navbar from './components/Navbar/Navbar';
 import Header from "./components/Header/Header";
@@ -36,6 +37,7 @@ function App() {
           <div className="content">
             <Routes>
             <Route path="/" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
 
 
               {/*Чисто кнопки в Header*/}
