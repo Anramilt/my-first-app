@@ -11,14 +11,17 @@ const LoginPage = () => {
 
   return (
     <div className={classes.mainConteiner}>
-      <img src={finalcleanlight}></img>
+      <div className={classes.mainTheme}>
+        <img src={finalcleanlight}></img>
+      </div>
+
       <div className={classes.loginContainer}>
         <div className={classes.title}>
           <div className={classes.mobiTestText}>MobiTEST </div>
           <div className={classes.systemEnterText}>Вход в систему </div>
           <div className={classes.registrationText}>
-          <NavLink to="/register" className={navData => navData.isActive ? classes.activeLink : classes.item}>Зарегистрироваться</NavLink>
-            </div>
+            <NavLink to="/register" className={navData => navData.isActive ? classes.activeLink : classes.item}>Зарегистрироваться</NavLink>
+          </div>
           {/* <h2 className={classes.title}>Вход в систему</h2> */}
         </div>
 
@@ -42,18 +45,23 @@ const LoginPage = () => {
         <div className={classes.registrationButtonsWrapper}>
           <div className={classes.iconButton}>
             <div className={classes.yandexIcon}>
-              <img
-                src={yandex}
-                effect="blur"
-              />
+              <div className={classes.yandexImgIcon}>
+                <img
+                  src={yandex}
+                  effect="blur"
+                />
+              </div>
             </div>
           </div>
           <div className={classes.iconButton}>
             <div className={classes.googleIcon}>
-              <img
-                src={google}
-                effect="blur"
-              />
+              <div className={classes.googleImgIcon}>
+                <img
+                  src={google}
+                  effect="blur"
+                />
+              </div>
+
             </div>
           </div>
         </div>

@@ -12,7 +12,9 @@ const RegisterPage = () => {
 
   return (
     <div className={classes.mainConteiner}>
-      <img src={finalcleanlight}></img>
+      <div className={classes.mainTheme}>
+        <img src={finalcleanlight}></img>
+      </div>
       <form action="http://localhost:8080/handle-register" method="POST">
         <div className={classes.registerContainer}>
           <div className={classes.title}>
@@ -43,27 +45,32 @@ const RegisterPage = () => {
 
           <div className={classes.buttonСontainer}>
             {/* <button type="button" className={classes.button} onClick={() => navigate(-1)}>Назад</button> */}
-            <button type="submit" className={classes.button}>Войти</button>
+            <button type="submit" className={classes.button}>Зарегистрироваться</button>
           </div>
           {/* </form> */}
           <div className={classes.registrationButtonsWrapper}>
-            <div className={classes.iconButton}>
-              <div className={classes.yandexIcon}>
+          <div className={classes.iconButton}>
+            <div className={classes.yandexIcon}>
+              <div className={classes.yandexImgIcon}>
                 <img
                   src={yandex}
                   effect="blur"
                 />
               </div>
             </div>
-            <div className={classes.iconButton}>
-              <div className={classes.googleIcon}>
+          </div>
+          <div className={classes.iconButton}>
+            <div className={classes.googleIcon}>
+              <div className={classes.googleImgIcon}>
                 <img
                   src={google}
                   effect="blur"
                 />
               </div>
+
             </div>
           </div>
+        </div>
         </div>
       </form>
     </div>
