@@ -1,29 +1,24 @@
 .mainContainer {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mainTheme img {
     width: 100vw;
     height: 100vh;
+    object-fit: cover;
+    position: absolute;
 }
 
 .loginContainer {   
     width: 540px;
     height: 430px;
-    top: 30vh;
-    left: 32vw;
-    position: absolute;
-    margin: -50px 0 0 0;
-    /* width: 30vw;
-    height: 40vh;
-    top: 40vh;
-    left: 35vw; */
-    border: 0.1vh solid rgba(210, 135, 111, 1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(210, 135, 111, 1);
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 40px 0px rgba(190, 131, 113, 0.15);
     backdrop-filter: blur(35px);
@@ -219,99 +214,25 @@
 
 
 
-
-@media only screen and (max-width:1280px) {
-    .loginContainer{
-        top: 25vh;
-        left: 25vw;
-        margin: 0 0 0 0;
-    }   
-}
-
-@media only screen and (max-width:920px) {
-    .loginContainer{
-        justify-content: center;
-        width: 50%;
-        height: 70%;
-        top: 20vh;
-        left: 25%;
-        margin: 0 0 0 0;
-    }
-    .title{
-        text-align: left;
-        flex-direction: column-reverse;
-    }
-    .systemEnterText{
-        font-size: 13px;
-        margin-left: 0;
-    }
-    .mobiTestText{
-        font-size: 13px;
-    }
-    .registrationText{
-        font-size: 13px;
-    }
-    .input{
-        width: 250px;
-    }
-    .button{
-        width: 250px;
-    }
-}
-
-@media only screen and (max-width:720px) {
-    .loginContainer{
-        justify-content: center;
-        width: 50%;
-        height: 70%;
-        top: 20vh;
-        left: 25%;
-        margin: 0 0 0 0;
-    }
-    .title{
-        text-align: left;
-        flex-direction: column-reverse;
-    }
-    .systemEnterText{
-        font-size: 13px;
-        margin-left: 0;
-    }
-    .mobiTestText{
-        font-size: 13px;
-    }
-    .registrationText{
-        font-size: 13px;
-    }
-    .input{
-        width: 250px;
-    }
-    .button{
-        width: 250px;
-    }
-}
-
 @media only screen and (max-width:520px) {
-    .loginContainer{
+    .registerContainer{
         justify-content: center;
         width: 100%;
         height: 100%;
-        top: 0;
-        left: 0;
-        margin: 0 0 0 0;
     }
     .title{
         flex-direction: column-reverse;
         text-align: left;
     }
     .systemEnterText{
-        font-size: 15px;
+        font-size: 17px;
         margin-left: 0;
     }
     .mobiTestText{
-        font-size: 15px;
+        font-size: 17px;
     }
     .registrationText{
-        font-size: 15px;
+        font-size: 17px;
     }
     .input{
         width: 250px;
@@ -320,4 +241,3 @@
         width: 250px;
     }
 }
-
